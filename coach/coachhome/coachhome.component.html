@@ -1,0 +1,21 @@
+<div *ngIf="data.length>0">
+
+    <div class="card" style="width: 25rem;" *ngFor="let d of data">
+        <div class="card-body">
+          <p class="card-text" [ngStyle]="{'font-size.px':20}">Appointment Date:</p>
+          <p class="card-text">{{d.appointmentDate}}</p>
+          <p class="card-text">Slot {{d.slot}}</p>
+          <div>
+            <p class="card-text">Booking ID:{{d.id}}</p>
+            <p class="card-text">User ID: {{d.userId}}</p>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="data.length==0">
+    <img src="../../../assets/Images/Notepad_icon.svg.png" width="100px">
+    <p class="cus">{{consta.noSchedules}}</p>
+</div>
+
+  

@@ -1,0 +1,28 @@
+.card{
+    margin-top: 7%;
+    margin-left: 33%;
+    background-color: black ;
+
+}
+
+.card-body{
+    background-color: black;
+    border-radius: 10%;
+
+}
+
+.card-text{
+    text-align: center;
+    color: white;
+}
+
+img{
+    margin-top: 10%;
+    margin-left: 47%;
+}
+
+.cus{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 24px;
+}

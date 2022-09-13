@@ -1,0 +1,77 @@
+<div class="row" *ngIf="role=='Coach'">
+    <div class="col-sm-6">
+      <div class="card">
+        <img class="custom" src="assets/Images/LifeCoachLogIn.jpg">
+          <span class="his"> Login as Life Coach</span>
+        <div class="card-body">
+         <div>
+          <form [formGroup]="coachloginForm">
+            <div class="form-row">
+                <input type="text" class="form-control" formControlName="id" placeholder="coachId">
+                <div *ngIf="id.invalid && id.touched">
+                  <small class="text-danger">Coach ID is required</small>
+              </div>
+            </div>
+            <div class="form-row">
+              <input type="text" class="form-control" formControlName="password" placeholder="Password">
+              <div *ngIf="password.invalid && password.touched">
+                <small class="text-danger">Password should have 3 to 10 characters</small>
+            </div>
+          </div>
+            
+          </form>
+         </div>
+         <div>
+          <button class="btn" type="button" class="btn btn-primary" (click)="Login('coach')">Login</button>
+          <div *ngIf="err">
+            <p class="text-danger">Invalid Credentials </p>
+          </div>
+
+      </div>
+        </div>
+       
+
+      </div>
+    </div>
+</div>  
+
+
+
+
+
+<div class="row" *ngIf="role=='User'">
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="custom" src="../../assets/Images/UserLogIn.jpg">
+        <span class="his"> Login as a User</span>
+      <div class="card-body">
+       <div>
+        <form [formGroup]="userloginForm">
+          <div class="form-row">
+              <input type="text" class="form-control" formControlName="userid" placeholder="userId">
+              <div *ngIf="userid.invalid && userid.touched">
+                <small class="text-danger">User ID is required</small>
+            </div>
+          </div>
+          <div class="form-row">
+            <input type="text" class="form-control" formControlName="userpassword" placeholder="Password">
+            <div *ngIf="userpassword.invalid && userpassword.touched">
+              <small class="text-danger">Password should have 5 to 10 characters</small>
+          </div>
+        </div>
+          
+        </form>
+       </div>
+       <div>
+        <button class="btn" type="button" class="btn btn-primary" (click)="Login('user')">Login</button>
+        <div *ngIf="err">
+          <p class="text-danger">Invalid Credentials </p>
+        </div>
+
+    </div>
+      </div>
+     
+
+    </div>
+  </div>
+</div>  

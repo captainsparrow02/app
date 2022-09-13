@@ -1,0 +1,31 @@
+.custom{
+   height: 50px;
+   margin: 10px;
+   
+}
+.his{
+    text-align: top;
+    font-size: larger;
+    color: white;
+    
+    
+}
+.card{
+    margin-top: 20%;
+    margin-left: 70%;
+    background-color: black;
+    display: block;
+    width: 70%;
+
+}
+.card-body{
+    margin-bottom: 30px;
+}
+.form-row{
+    padding:20px
+}
+
+button{
+    width: 50%;
+    margin-left: 120px;
+}

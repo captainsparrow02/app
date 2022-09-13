@@ -1,0 +1,148 @@
+<div class="card text-white bg-dark mb-3" *ngIf="role=='Coach' && !coachForm">
+    <div class="card-header">Life Coach Profile</div>
+    <div class="card-body">
+        <form [formGroup]="coachregisterForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name">
+                <div *ngIf="name.invalid && name.touched">
+                    <small class="text-danger">Name should have 3 to 50 characters</small>
+                </div>
+            </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+                <div *ngIf="password.invalid && password.touched">
+                    <small class="text-danger">Password should have 5 to 10 characters</small>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+              <label >Date of Birth</label>
+              <input type="date" class="form-control" placeholder="mm/dd/yyyy" formControlName="dateOfBirth">
+              <div *ngIf="dateOfBirth.invalid && dateOfBirth.touched">
+                <small class="text-danger">Age should be bewteen 20 to 100</small>
+            </div>
+            </div>
+            <div>
+                <label >Gender</label>
+                <input type="radio" name="gender" class="custom-control-input" formControlName="gender">Male
+                <input type="radio" name="gender" class="custom-control-input">Female
+              </div>
+              <div class="form-group">
+                <label >Mobile Number</label>
+                <input type="number" class="form-control" formControlName="mobileNumber">
+                <div *ngIf="mobileNumber.invalid && mobileNumber.touched">
+                    <small class="text-danger">Mobile Number should be of 10 digits</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label >Speciality</label>
+                <input type="text" class="form-control" formControlName="speciality">
+              </div>
+              <div *ngIf="speciality.invalid && speciality.touched">
+                <small class="text-danger">Name should have 10 to 50 characters</small>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="coachregisterForm.invalid" (click)="coachregister()">Register</button>
+          </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="card text-white bg-dark mb-3" *ngIf="role=='User' && !userForm">
+    <div class="card-header">Life Users Profile</div>
+    <div class="card-body">
+        <form [formGroup]="userregisterForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="username">
+                <div *ngIf="username.invalid && username.touched">
+                    <small class="text-danger">Name should have 3 to 50 characters</small>
+                </div>
+            </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="userpassword">
+                <div *ngIf="userpassword.invalid && userpassword.touched">
+                    <small class="text-danger">Password should have 3 to 10 characters</small>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+              <label >Date of Birth</label>
+              <input type="date" class="form-control" placeholder="mm/dd/yyyy" formControlName="userdateOfBirth">
+              <div *ngIf="userdateOfBirth.invalid && userdateOfBirth.touched">
+                <small class="text-danger">Age should be bewteen 20 to 100</small>
+            </div>
+            </div>
+            <div>
+                <label >Gender</label>
+                <input type="radio" name="usergender" class="custom-control-input" formControlName="usergender">Male
+                <input type="radio" name="usergender" class="custom-control-input">Female
+              </div>
+              <div class="form-group">
+                <label >Mobile Number</label>
+                <input type="number" class="form-control" formControlName="usermobileNumber">
+                <div *ngIf="usermobileNumber.invalid && usermobileNumber.touched">
+                    <small class="text-danger">Mobile Number should be of 10 digits</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label >Email</label>
+                <input type="text" class="form-control" formControlName="email">
+                <div *ngIf="email.invalid && email.touched">
+                  <small class="text-danger">Email is required</small>
+              </div>
+              </div>
+              <div class="form-group">
+                <label >Pincode</label>
+                <input type="number" class="form-control" formControlName="pincode">
+              </div>
+              <div *ngIf="pincode.invalid && pincode.touched">
+                <small class="text-danger">Pincode should be 6 characters</small>
+            </div>
+              <div class="form-group">
+                <label >City</label>
+                <input type="text" class="form-control" formControlName="city">
+                <div *ngIf="city.invalid && city.touched">
+                  <small class="text-danger">City should be between 6 to 20 characters</small>
+              </div>
+              </div>
+              <div class="form-group">
+                <label >State</label>
+                <input type="text" class="form-control" formControlName="state">
+                <div *ngIf="state.invalid && state.touched">
+                  <small class="text-danger">State should be between 6 to 20 characters</small>
+              </div>
+              </div>
+              <div class="form-group">
+                <label >Country</label>
+                <input type="text" class="form-control" formControlName="country">
+                <div *ngIf="country.invalid && country.touched">
+                  <small class="text-danger">Country should be between 6 to 20 characters</small>
+              </div>
+              </div>
+            <button type="submit" class="btn btn-primary" (click)="userregister()">Register</button>
+            
+          </form>
+    </div>
+  </div>
+
+  <div *ngIf="role=='Coach' && coachForm">
+    <img class="custom" src="../../assets/Images/LifeCoachLogIn.jpg">
+    <p class="jai">{{coos.accountCreated}}</p>
+    <p class = "hind">Your Coach Id is {{coachId}}</p>
+    <button class="btn btn-primary"class="logo"(click)="directLogin()">Login Now</button>
+  </div>
+
+  <div *ngIf="role=='User' && userForm">
+    <img class="custom" src="../../assets/Images/UserLogIn.jpg">
+    <p class="jai">{{coos.accountCreated}}</p>
+    <p class = "hind">Your user Id is {{userId}}</p>
+    <button class="btn btn-primary" class="logo" (click)="directLogin()">Login Now</button>
+  </div>
+  

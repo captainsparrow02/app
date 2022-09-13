@@ -1,0 +1,19 @@
+.custom{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.jai{
+    text-align: center;
+    font-size: 50px;
+}
+.hind{
+    text-align: center;
+    font-size: 30px;
+}
+.logo{
+    margin-left:50% !important;
+    background-color: lightskyblue;
+    
+}
